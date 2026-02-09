@@ -30,14 +30,10 @@ public class Calculator_Test {
 		
 	  }
 	 @Test
-		 public void Add_0_1_plus_0_7_shouldReturn_0_8() {		
+		 public void Add_0_plus_6_shouldReturn_6() {		
 				browser.findElement(By.id("button00")).click();
-				browser.findElement(By.id("buttondot")).click();
-				browser.findElement(By.id("button01")).click();
 				browser.findElement(By.id("buttonplus")).click();
-				browser.findElement(By.id("button00")).click();
-				browser.findElement(By.id("buttondot")).click();
-				browser.findElement(By.id("button07")).click();
+				browser.findElement(By.id("button06")).click();
 				try {
 					  Thread.sleep(1000);
 					} catch (InterruptedException e) {
@@ -47,7 +43,7 @@ public class Calculator_Test {
 				System.out.println("hello");
 				String result= browser.findElement(By.id("calculated-display")).getAttribute("value").toString();
 				System.out.println(result);	
-				String Expected= "0.8";
+				String Expected= "6";
 				assertEquals(Expected,result);				
 		}
 	 @Test
@@ -85,9 +81,8 @@ public class Calculator_Test {
 				assertEquals(Expected,result);				
 		}
 	 @Test
-		public void Subtract_6_minus_minus_8_shouldReturn_14() {		
+		public void Subtract_6_minus_8_shouldReturn_Minus2() {		
 				browser.findElement(By.id("button06")).click();
-				browser.findElement(By.id("buttonminus")).click();
 				browser.findElement(By.id("buttonminus")).click();
 				browser.findElement(By.id("button08")).click();
 				try {
@@ -99,13 +94,14 @@ public class Calculator_Test {
 				System.out.println("hello");
 				String result= browser.findElement(By.id("calculated-display")).getAttribute("value").toString();
 				System.out.println(result);	
-				String Expected= "14";
+				String Expected= "-2";
 				assertEquals(Expected,result);				
 		}
 	 @Test
-		public void Multiply_5_without_second_operand_shouldReturn_5() {		
+		public void Multiply_5_by_7_shouldReturn_35() {		
 				browser.findElement(By.id("button05")).click();
 				browser.findElement(By.id("buttonmultiply")).click();
+				browser.findElement(By.id("button07")).click();
 				try {
 					  Thread.sleep(1000);
 					} catch (InterruptedException e) {
@@ -115,7 +111,7 @@ public class Calculator_Test {
 				System.out.println("hello");
 				String result= browser.findElement(By.id("calculated-display")).getAttribute("value").toString();
 				System.out.println(result);	
-				String Expected= "5";
+				String Expected= "35";
 				assertEquals(Expected,result);				
 		}
 	 @Test
